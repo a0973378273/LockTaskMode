@@ -9,7 +9,7 @@ android {
 
     defaultConfig {
         applicationId "bean.sample.screenbroadcastsample"
-        minSdk 23
+        minSdk 24
         targetSdk 32
         versionCode 1
         versionName "1.0"
@@ -46,4 +46,7 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.4'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
+
+    implementation("priv.beam:base:2.0.7")
+    implementation("priv.beam:util:1.0.0")
 }

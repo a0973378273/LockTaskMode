@@ -7,11 +7,11 @@
     android:fitsSystemWindows="true"
     tools:context=".MainActivity">
 
-
     <Button
         android:id="@+id/button_unlock"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="300dp"
         android:text="解鎖"
         app:layout_constraintBottom_toTopOf="@+id/button_call"
         app:layout_constraintEnd_toEndOf="parent"
@@ -22,35 +22,91 @@
         android:id="@+id/button_call"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="緊急電話"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button_wifi"
+        android:layout_marginTop="100dp"
+        android:text="客服電話"
+        app:layout_constraintEnd_toStartOf="@+id/button_emergency"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_unlock" />
+
+    <Button
+        android:id="@+id/button_emergency"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:text="緊急電話"
+        app:layout_constraintEnd_toStartOf="@+id/button_wifi"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/button_call"
         app:layout_constraintTop_toBottomOf="@+id/button_unlock" />
 
     <Button
         android:id="@+id/button_wifi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
         android:text="wifi"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/button_call"
+        app:layout_constraintStart_toEndOf="@+id/button_emergency"
         app:layout_constraintTop_toBottomOf="@+id/button_unlock" />
+
+    <Button
+        android:id="@+id/button_set_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="設置鎖屏文字"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button_set_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="設置鎖屏密碼"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_set_text"
+        app:layout_constraintVertical_bias="0.499" />
+
+    <Button
+        android:id="@+id/button_control"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="100dp"
+        android:text="切換遠程控制"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_set_password" />
+
+    <Button
+        android:id="@+id/button_lock_task_mode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="設定為 Lock task mode"
+        app:layout_constraintBottom_toTopOf="@id/button_home_launcher"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/button_home_launcher"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:text="設定為 Home launcher"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/text_view_device_owner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
         android:text="Device owner"
         android:textSize="20sp"
-        android:layout_marginTop="100dp"
         android:visibility="gone"
-        app:layout_constraintEnd_toStartOf="@+id/text_view_lock_task_mode"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -60,10 +116,19 @@
         android:layout_height="wrap_content"
         android:text="Lock task mode"
         android:textSize="20sp"
-        android:layout_marginTop="100dp"
         android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/text_view_device_owner"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_view_device_owner" />
+
+    <TextView
+        android:id="@+id/text_view_home_launcher"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="home_launcher"
+        android:textSize="20sp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_view_lock_task_mode" />
 </androidx.constraintlayout.widget.ConstraintLayout>

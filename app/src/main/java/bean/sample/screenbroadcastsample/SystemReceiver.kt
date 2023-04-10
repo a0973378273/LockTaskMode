@@ -10,6 +10,6 @@ class SystemReceiver : BroadcastReceiver() {
     override fun onReceive(context: Context?, intent: Intent?) {
         Log.d("test","onReceive context: $context")
         context?.startActivity(Intent(context, MainActivity::class.java).addFlags(FLAG_ACTIVITY_NEW_TASK).addFlags(
-            FLAG_ACTIVITY_CLEAR_TASK))
+            FLAG_ACTIVITY_SINGLE_TOP))
     }
 }
